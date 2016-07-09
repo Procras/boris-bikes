@@ -3,10 +3,17 @@ require 'docking_station'
 describe DockingStation do
   DEFAULT_CAPACITY = 20
 
+
   it { is_expected.to respond_to :release_bike }
 
   subject do
     DockingStation.new
+  end
+
+  describe '#set_capacity' do
+    it 'sets docking station capacity' do
+      expect(DockingStation.new).to respond_to(:set_capacity)
+    end
   end
 
   describe '#release_bike' do
